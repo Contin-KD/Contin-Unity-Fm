@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 {
     [Module(6)]
     public static MessageModule Message { get => TGameFrameWork.Instance.GetModule<MessageModule>(); }
+
     private bool activing;
+
     private void Awake()
     {
         if (TGameFrameWork.Instance != null)
