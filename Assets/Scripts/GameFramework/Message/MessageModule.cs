@@ -13,7 +13,7 @@ public class MessageModule : BaseGameModule
     // 本地消息
     private Dictionary<Type, List<object>> localMessageHandlers;
 
-    // public Monitor Monitor { get; private set; }
+    public Monitor Monitor { get; private set; }
 
     /// <summary>
     /// 初始化模块
@@ -23,7 +23,7 @@ public class MessageModule : BaseGameModule
         base.OnModuleInit();
         // 初始本地消息字典
         localMessageHandlers = new Dictionary<Type, List<object>>();
-        // Monitor = new Monitor();
+        Monitor = new Monitor();
         // 全局消息字典
         LoadAllMessageHandlers();
     }
@@ -94,19 +94,19 @@ public class MessageModule : BaseGameModule
             }
         }
 
-        //if (localMessageHandlers.TryGetValue(typeof(T), out List<object> localHandlerList))
-        //{
-        //    List<object> list = ListPool<object>.Obtain();
-        //    list.AddRangeNonAlloc(localHandlerList);
-        //    foreach (var handler in list)
-        //    {
-        //        if (!(handler is MessageHandlerEventArgs<T> messageHandler))
-        //            continue;
+        if (localMessageHandlers.TryGetValue(typeof(T), out List<object> localHandlerList))
+        {
+            List<object> list = ListPool<object>.Obtain();
+            list.AddRangeNonAlloc(localHandlerList);
+            foreach (var handler in list)
+            {
+                if (!(handler is MessageHandlerEventArgs<T> messageHandler))
+                    continue;
 
-        //        await messageHandler(arg);
-        //    }
-        //    ListPool<object>.Release(list);
-        //}
+                await messageHandler(arg);
+            }
+            ListPool<object>.Release(list);
+        }
     }
 }
 
