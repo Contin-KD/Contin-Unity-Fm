@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public static class ListExt
 {
     /// <summary>
-    /// ÎŞGC°æ±¾µÄAddRange
+    /// æ— GCç‰ˆæœ¬çš„AddRange
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="list"></param>
@@ -22,7 +22,7 @@ public static class ListExt
     }
 
     /// <summary>
-    /// ÓĞĞò²åÈë,½«Ò»¸öÔªËØ²åÈëµ½ÒÑ¾­ÅÅĞòºÃµÄlistÖĞ
+    /// æœ‰åºæ’å…¥,å°†ä¸€ä¸ªå…ƒç´ æ’å…¥åˆ°å·²ç»æ’åºå¥½çš„listä¸­
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="list"></param>
@@ -54,7 +54,7 @@ public static class ListExt
                 continue;
             }
 
-            //ÕÒµ½Î»ÖÃÁË
+            //æ‰¾åˆ°ä½ç½®äº†
             list.Insert(index + 1, element);
             return index + 1;
         }
