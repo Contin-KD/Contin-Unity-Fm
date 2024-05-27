@@ -970,6 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proceduresNames:
+  - Koakuma.Game.Procedure.LaunchProcedure
   - Koakuma.Game.Procedure.InitProcedure
   defaultProcedureName: Koakuma.Game.Procedure.InitProcedure
 --- !u!1660057539 &9223372036854775807
