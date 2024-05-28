@@ -1,1 +1,8 @@
-[]
+[
+    {
+      "ID": 1,
+      "Description": "LoginView",
+      "Asset": "Assets/Scripts/LoginView.prefab",
+      "Mode": 0
+    }
+  ]

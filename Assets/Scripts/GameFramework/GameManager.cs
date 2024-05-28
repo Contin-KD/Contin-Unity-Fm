@@ -5,13 +5,20 @@ using UnityEngine;
 using Unity.Properties;
 using UnityEngine.Rendering.VirtualTexturing;
 using TGame.Procedure;
+using OpenCover.Framework.Model;
+using TGame.UI;
+using TGame.Asset;
 
 namespace Koakuma.Game
 {
     public class GameManager : MonoBehaviour
     {
+        [Module(1)]
+        public static AssetModule Asset { get => TGameFrameWork.Instance.GetModule<AssetModule>(); }
         [Module(2)]
         public static ProcedureModule Procedure { get => TGameFrameWork.Instance.GetModule<ProcedureModule>(); }
+        [Module(3)]
+        public static UIModule UI { get => TGameFrameWork.Instance.GetModule<UIModule>(); }
 
         [Module(6)]
         public static MessageModule Message { get => TGameFrameWork.Instance.GetModule<MessageModule>(); }
