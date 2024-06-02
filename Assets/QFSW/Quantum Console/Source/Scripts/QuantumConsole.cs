@@ -976,6 +976,7 @@ namespace QFSW.QC
                             }
                     }
                 }
+               
 
                 LogToConsoleAsync(condition, type);
             }
